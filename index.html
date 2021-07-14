@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CSS Showcase</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Warnes&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link href='https://fonts.googleapis.com/css?family=Sacramento:400' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <header class="header">
+        <div class="nav-bar">
+            <div class="logo-wrapper">
+                <div class="logo-image-box">
+                    <div class="logo-image">
+
+                    </div>
+                    <span class="logo-text">
+                        insight
+                        <span class="sub-logo-text">
+                            For The Designer
+                        </span>
+                    </span>
+                </div>
+            </div>
+            <div class="nav-menu-wrapper">
+                <ul class="nav-items">
+                    <li class="nav-item"><a href="https://learner-craft.web.app/#/">work</a></li>
+                    <li class="nav-item"><a href="#">clients</a></li>
+                    <li class="nav-item"><a href="#">awards</a></li>
+                    <li class="nav-item"><a href="#">contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="illustration-wrapper">
+            <img src="images/Sample_10.png" class="image-study" alt="study-illustration">
+        </div> -->
+        <h1 class="main-title">• neon light effect •</h1>
+        <div class="main-wrapper">
+            <div class="card">
+                <div class="card-mask">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Glassmorphism</h2>
+                    <a href="#glassmorphism-part" class="card-btn">Explore •</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-mask">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="card-content">
+                    <h2 class="card-title">Prodcut Cards</h2>
+                    <a href="#" class="card-btn">Explore •</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-mask">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">parallax effect</h2>
+                    <a href="#" class="card-btn">Explore •</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-mask">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="card-content">
+                    <h2 class="card-title">Loading Widgets</h2>
+                    <a href="#loading-widgets-part" class="card-btn">Explore •</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main" id="main">
+        <div class="glassmorphism-part" id="glassmorphism-part">
+            <h2 class="glassmorphism-title">
+                Glassmorphism
+            </h2>
+            <span></span>
+            <div class="glassmorphism-section">
+                <div class="glassmorphism-widget-wrapper">
+                    <div class="card tilt-card">
+                        <div class="card-content">
+                            <h2>01</h2>
+                            <h3>Card One</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, quas.</p>
+                            <a href="#glassmorphism-part">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="glassmorphism-widget-wrapper">
+                    <div class="card tilt-card">
+                        <div class="selection-indicator">
+                            <span></span><span></span><span></span>
+                            <img src="images/selection.png" alt="">
+                        </div>
+                        <div class="card-content">
+                            <h2>02</h2>
+                            <h3>Card Two</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, quas.</p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="glassmorphism-widget-wrapper">
+                    <div class="product-card">
+                        <ul class="thumb">
+                            <li onmouseover="changeImageSrc('images/shoes1.png')"><img src="images/shoes1.png" alt=""></li>
+                            <li onmouseover="changeImageSrc('images/shoes2.png')"><img src="images/shoes2.png" alt=""></li>
+                            <li onmouseover="changeImageSrc('images/shoes3.png')"><img src="images/shoes3.png" alt=""></li>
+                        </ul>
+                        <div class="hero-container">
+                            <h2>Nike Air Zoom</h2>
+                            <span>Z</span>
+                            <img src="images/shoes1.png" alt="" class="hero-shoe">
+                            <ul class="size">
+                                <span>Size</span>
+                                <li>7</li>
+                                <li>8</li>
+                                <li>9</li>
+                                <li>10</li>
+                            </ul>
+                            <a href="#" class="card-btn">Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="glassmorphism-widget-wrapper">
+                    <div class="product-card">
+                        <ul class="thumb">
+                            <li onmouseover="changeImageSrcTwo('images/shoes1.png')"><img src="images/shoes1.png" alt=""></li>
+                            <li onmouseover="changeImageSrcTwo('images/shoes2.png')"><img src="images/shoes2.png" alt=""></li>
+                            <li onmouseover="changeImageSrcTwo('images/shoes3.png')"><img src="images/shoes3.png" alt=""></li>
+                        </ul>
+                        <div class="hero-container">
+                            <h2>Nike Air Force</h2>
+                            <img src="images/shoes1.png" alt="" class="hero-shoe-two">
+                            <ul class="size">
+                                <span>Size</span>
+                                <li>7</li>
+                                <li>8</li>
+                                <li>9</li>
+                                <li>10</li>
+                            </ul>
+                            <a href="#" class="card-btn">Add To Cart</a>
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-card-wrapper">
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+            <div class="wave wave4"></div>
+            <span></span>
+            <span></span>
+            <h1>Product Cards</h1>
+            <div class="cards-display-section">
+               <div class="product-card card-glassmorphism">
+                  <ul class="thumb">
+                      <li id="thumb-option"><img src="images/shoes1.png" alt="shoe1" onmouseover="changeImageSrcThree('images/shoes1.png')"></li>
+                      <li id="thumb-option"><img src="images/shoes2.png" alt="shoe2" onmouseover="changeImageSrcThree('images/shoes2.png')"></li>
+                      <li id="thumb-option"><img src="images/shoes3.png" alt="shoe3" onmouseover="changeImageSrcThree('images/shoes3.png')"></li>
+                  </ul>
+                  <div class="hero-container">
+                      <div class="container-content">
+                          <h2>Nike Air Zoom</h2>
+                          <img src="images/shoes1.png" alt="selected-shoe" class="hero-img" id="hero-img">
+                          <ul class="size-bar">
+                              <span>size</span>
+                              <li>7</li>
+                              <li>8</li>
+                              <li>9</li>
+                              <li>10</li>
+                          </ul>
+                          <a href="#" class="btn">Add To Cart</a>
+                      </div>
+                  </div>
+               </div>
+               <div class="product-card-two card-animation">
+                   <span id="animated-circle"></span>
+                   <div class="img-container">
+                       <img src="images/shoes1.png" alt="" id="hero-shoe-image">
+                   </div>
+                   <div class="content-container">
+                       <h2>Nike Air Zoom</h2>
+                       <ul class="size-bar">
+                           <span>Size</span>
+                           <li>7</li>
+                           <li>8</li>
+                           <li>9</li>
+                           <li>10</li>
+                       </ul>
+                    <ul class="color-bar">
+                        <span>Color</span>
+                        <li id="selected-option-two" onmouseover="changeImageSrcFour('images/shoes1.png'); changeSpanColor('#e4eb90')"><span></span ></li>
+                        <li id="selected-option-two" onmouseover="changeImageSrcFour('images/shoes3.png'); changeSpanColor('#53e6dc')"><span></span></li>
+                        <li id="selected-option-two" onmouseover="changeImageSrcFour('images/shoes2.png'); changeSpanColor('#edc185')"><span></span></li>
+                    </ul>
+                    <a href="#" class="btn">Add To Cart</a>
+                   </div>
+               </div>
+            </div>
+        </div>
+        <div class="loading-widgets-part" id="loading-widgets-part">
+            <h2 class="title-for-loading">
+                Loading Widgets
+            </h2>
+            <div class="loading-section">
+                <div class="loading-widget-wrapper">
+                    <div class="loader">
+                    </div>
+                </div>
+                <div class="loading-widget-wrapper">
+                    <div class="loader">
+                        <span></span><span></span><span></span><span></span>
+                        <h2>Loading...</h2>
+                    </div>
+                </div>
+                <div class="loading-widget-wrapper">
+                    <div class="loader">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="loading-widget-wrapper">
+                    <div class="loader">
+                        <span style="--i:1;"></span>
+                        <span style="--i:2;"></span>
+                        <span style="--i:3;"></span>
+                        <span style="--i:4;"></span>
+                        <span style="--i:5;"></span>
+                        <span style="--i:6;"></span>
+                        <span style="--i:7;"></span>
+                        <span style="--i:8;"></span>
+                        <span style="--i:9;"></span>
+                        <span style="--i:10;"></span>
+                        <span style="--i:11;"></span>
+                        <span style="--i:12;"></span>
+                        <span style="--i:13;"></span>
+                        <span style="--i:14;"></span>
+                        <span style="--i:15;"></span>
+                        <span style="--i:16;"></span>
+                        <span style="--i:17;"></span>
+                        <span style="--i:18;"></span>
+                        <span style="--i:19;"></span>
+                        <span style="--i:20;"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="illustration-wrapper">
+                <img src="images/Sample_18.png" class="image-dog" alt="dog-illustration">
+            </div>
+        </div>
+        
+    </main>
+    <script type="text/javascript" src="js/vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelectorAll(".tilt-card"), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare": 1
+        });
+    </script>
+    <script>
+        function changeImageSrc(anything) {
+            document.querySelector('.hero-shoe').src = anything;
+        }
+    </script>
+    <script>
+        function changeImageSrcTwo(anything) {
+            document.querySelector('.hero-shoe-two').src = anything;
+        }
+
+            function changeImageSrcThree(imgSrc) {
+                document.getElementById("hero-img").src = imgSrc;
+            }
+
+            function changeImageSrcFour(imgSrc) {
+                document.getElementById("hero-shoe-image").src = imgSrc;
+            }
+            function changeSpanColor(color) {
+               document.getElementById("animated-circle").style.background = color;
+           }
+    </script>
+    
+</body>
+
+</html>

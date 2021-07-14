@@ -1,0 +1,1617 @@
+/*=============== variables setup ===========*/
+
+:root {
+  --theme-yellow: #ffbc00;
+  --theme-red: #ff0058;
+  --theme-blue: #03a9f4;
+  --theme-green: #4dff03;
+  --theme-lightblue: #00d0ff;
+  --theme-purple: #6e18f3;
+  --theme-light-yellow: #e4eb90;
+  --theme-neon-green: #53e6dc;
+  --theme-light-red: #edc185;
+  --theme-shadow-small: -1px -1px 1px rgba(255, 255, 255, 0.3);
+  --theme-shadow-medium: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  --theme-shadow-large: 15px 15px 15px rgba(0, 0, 0, 0.2);
+  --reflection-shadow: linear-gradient(transparent, #0004);
+
+  /* ===============3d effect text shadow, both text-shadow and filter dropshadow ===== */
+  /* box-shadow: -0.5px -0.5px 0.5px rgba(255, 255, 255, 0.3), 1px 1px 1px rgba(0, 0, 0, 0.2), 3px 3px 3px rgba(0, 0, 0, 0.2); */
+
+  /* ============== glassmorphism settings=================== */
+  /* background: rgba(255,255,255,.1);
+  box-shadow: 2rem 2rem 5rem rgba(0, 0, 0, .5);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(.5rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5); */
+  /* ============ more glassy=========================== */
+  /* background: rgba(255,255,255,.2);
+  box-shadow: 0 1.5rem 2.5rem rgba(0, 0, 0, .05);
+  border-radius: 2rem;
+  backdrop-filter: blur(.4rem);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5); */
+}
+
+/* ==========root font size -to 10px========= */
+
+html {
+  font-size: 62.5%;
+}
+
+/* ===========initial reset============= */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/* ==========body layout=============== */
+
+body {
+  font-family: "Oswald", sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  background-color: #111;
+}
+
+/* =========main==============================*/
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-widgets-part {
+  height: 100vh;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  background: #111;
+  margin: 8rem;
+}
+/* =====loading-widgets-part-background-animation-effect==== */
+
+.glowing-background {
+  height: 75rem;
+  min-width: 75rem;
+  position: absolute;
+  z-index: -3;
+  transform-origin: right;
+}
+
+.loading-widgets-part .glowing-background:nth-child(4n + 1) {
+  top: 20%;
+  left: -10%;
+  animation: loading-rotate 5s linear infinite;
+
+}
+
+.loading-widgets-part .glowing-background:nth-child(4n + 2) {
+  top: 0%;
+  left: 40%;
+  animation: loading-rotate 7s linear infinite;
+
+}
+
+.loading-widgets-part .glowing-background:nth-child(4n + 3) {
+  top: 52%;
+  left: 60%;
+  animation: loading-rotate 3s linear infinite;
+
+}
+
+.loading-widgets-part .glowing-background:nth-child(4n + 4) {
+  top: 30%;
+  left: 65%;
+  animation: loading-rotate 9s linear infinite;
+
+}
+
+.loading-widgets-part .glowing-background:nth-child(even) {
+  transform-origin: left;
+}
+
+
+.glowing-background span {
+  position: absolute;
+  top: calc(8rem * var(--a));
+  right: calc(8rem * var(--a));
+  bottom: calc(8rem * var(--a));
+  left: calc(8rem * var(--a));
+  z-index: -2;
+}
+
+.glowing-background span::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -.8rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+
+.glowing-background span:nth-child(3n + 1)::before {
+  background: rgba(134,255,0,1);
+  box-shadow: 0 0 20px rgba(134,255,0,1),
+  0 0 40px rgba(134,255,0,1),
+  0 0 60px rgba(134,255,0,1),
+  0 0 80px rgba(134,255,0,1),
+  0 0 0 8px rgba(134,255,0,.1);
+}
+
+.glowing-background span:nth-child(3n + 2)::before {
+  background: rgba(255,214,0,1);
+  box-shadow: 0 0 20px rgba(255,214,0,1),
+  0 0 40px rgba(255,214,0,1),
+  0 0 60px rgba(255,214,0,1),
+  0 0 80px rgba(255,214,0,1),
+  0 0 0 8px rgba(255,214,0,.1);
+}
+
+.glowing-background span:nth-child(3n + 3)::before {
+  background: rgba(0,226,255,1);
+  box-shadow: 0 0 20px rgba(0,226,255,1),
+  0 0 40px rgba(0,226,255,1),
+  0 0 60px rgba(0,226,255,1),
+  0 0 80px rgba(0,226,255,1),
+  0 0 0 8px rgba(0,226,255,.1);
+}
+
+.glowing-background span:nth-child(3n + 1) {
+  animation: particle-rotate 10s alternate infinite;
+}
+
+.glowing-background span:nth-child(3n + 2) {
+  animation: particle-rotate-reverse 3s alternate infinite;
+}
+
+.glowing-background span:nth-child(3n + 3) {
+  animation: particle-rotate 8s alternate infinite;
+}
+
+@keyframes particle-rotate {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+
+@keyframes particle-rotate-reverse {
+  0% {transform: rotate(360deg);}
+  100% {transform: rotate(0deg);}
+}
+
+/* ===========loading-widgets=============== */
+.title-for-loading {
+  /* text-transform: uppercase; */
+  font-size: 20rem;
+  margin-bottom: 10rem;
+  /* letter-spacing: 1rem; */
+  color: #fff;
+  padding: 0 5rem;
+  /* filter: drop-shadow(-1px -1px 1px rgba(255, 255, 255, 0.3))
+  drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.2))
+  drop-shadow(6px 6px 6px rgba(0, 0, 0, 0.2)); */
+  overflow: hidden;
+  /* animation: drop-shadow-change 10s linear infinite; */
+  transition: all 1s;
+}
+
+/* .title-for-loading:hover {
+  background: white;
+  box-shadow: 0 0 .5rem white, 
+  0 0 1rem white, 
+  0 0 1.5rem white, 
+  0 0 2rem white;
+} */
+
+
+/* @keyframes drop-shadow-change {
+  0%,100% {
+    filter: drop-shadow(-0.5px -0.5px 0.5px rgba(255, 255, 255, 0.3))
+    drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.2))
+    drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.2));}
+  50% {
+    filter: drop-shadow(-2px -2px .2px rgba(255, 255, 255, 0.3))
+    drop-shadow(.3rem .3rem .3px rgba(0, 0, 0, 0.2))
+    drop-shadow(.6rem .6rem .6px rgba(0, 0, 0, 0.2));}
+} */
+
+
+
+.loading-section {
+  display: flex;
+  width: 90%;
+  justify-content: space-around;
+}
+
+.loading-widget-wrapper {
+  position: relative;
+  -webkit-box-reflect: below 2px linear-gradient(#0001, #0004);
+}
+
+.loader {
+  height: 20rem;
+  width: 20rem;
+  position: relative;
+  /* -webkit-box-reflect: below 2px linear-gradient(#0001, #0004); */
+}
+
+.loader::after,
+.loader::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+}
+
+/* =============loader type one=============== */
+.main .loading-widget-wrapper:nth-child(1) .loader {
+  animation: loading-rotate 1s linear infinite;
+}
+
+.main .loading-widget-wrapper:nth-child(1) .loader:hover {
+    animation-direction: reverse;
+}
+
+@keyframes loading-rotate {
+  0% {
+    transform: rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+.main .loading-widget-wrapper:nth-child(1) .loader,
+.loading-widget-wrapper:nth-child(1) .loader::after {
+  background: linear-gradient(
+    45deg,
+    transparent,
+    transparent 40%,
+    var(--theme-yellow)
+  );
+  border-radius: 50%;
+}
+
+.loading-widget-wrapper:nth-child(1) .loader::after {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  filter: blur(3rem);
+}
+
+.loading-widget-wrapper:nth-child(1) .loader::before {
+  top: 1.2rem;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  left: 1.2rem;
+  background: #111;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.loader-reflection {
+  position: absolute;
+  bottom: -110%;
+}
+
+.main .loading-widget-wrapper:nth-child(1) .loader-reflection {
+  animation: loading-rotate-two 1s linear infinite;
+}
+
+@keyframes loading-rotate-two {
+  0% {
+    transform: rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* ================loader-type-two=============== */
+
+.loading-widget-wrapper:nth-child(2) .loader {
+  color: var(--theme-lightblue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.5s;
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-widget-wrapper:nth-child(2) .loader h2 {
+  border-right: 1px var(--theme-lightblue) solid;
+  animation: typing 5s steps(10) infinite;
+  overflow: hidden;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  30%,
+  60% {
+    width: 126.54px;
+  }
+  90% {
+    width: 0;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+.loading-widget-wrapper:nth-child(2) .loader:hover {
+  background: var(--theme-lightblue);
+  color: white;
+  box-shadow: 0 0 10px var(--theme-lightblue), 0 0 21px var(--theme-lightblue),
+    0 0 42px var(--theme-lightblue), 0 0 82px var(--theme-lightblue);
+}
+
+.loading-widget-wrapper:nth-child(2) .loader:hover h2 {
+  border-right: 1px white solid;
+}
+
+.loading-widget-wrapper:nth-child(2) .loader span {
+  display: inline-block;
+  position: absolute;
+}
+
+.loading-widget-wrapper:nth-child(2) .loader span:nth-child(1) {
+  height: 1.2rem;
+  width: 100%;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    transparent 20%,
+    var(--theme-lightblue)
+  );
+  animation: moveToRight 2s linear infinite;
+  animation-delay: 0s;
+}
+
+@keyframes moveToRight {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.loading-widget-wrapper:nth-child(2) .loader span:nth-child(2) {
+  height: 100%;
+  width: 1.2rem;
+  top: -100%;
+  right: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    transparent 20%,
+    var(--theme-lightblue)
+  );
+  animation: moveToBottom 2s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes moveToBottom {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.loading-widget-wrapper:nth-child(2) .loader span:nth-child(3) {
+  height: 1.2rem;
+  width: 100%;
+  bottom: 0;
+  right: -100%;
+  background: linear-gradient(
+    to left,
+    transparent,
+    transparent 20%,
+    var(--theme-lightblue)
+  );
+  animation: moveToLeft 2s linear infinite;
+  animation-delay: 1s;
+}
+
+@keyframes moveToLeft {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.loading-widget-wrapper:nth-child(2) .loader span:nth-child(4) {
+  height: 100%;
+  width: 1.2rem;
+  bottom: -100%;
+  left: 0;
+  background: linear-gradient(
+    to top,
+    transparent,
+    transparent 20%,
+    var(--theme-lightblue)
+  );
+  animation: moveToTop 2s linear infinite;
+  animation-delay: 1.5s;
+}
+
+@keyframes moveToTop {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+/* ==========loader type three================ */
+.main .loading-widget-wrapper:nth-child(3) .loader {
+  background-color: #0d2323;
+  border-radius: 50%;
+  animation: just1-rotate 1s linear infinite;
+}
+
+@keyframes just1-rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.main .loading-widget-wrapper:nth-child(3) .loader::before {
+  background: linear-gradient(to top, transparent, rgba(0, 255, 249, 0.4));
+  top: 0;
+  left: 0;
+  right: 50%;
+  bottom: 0;
+  /* 还必须是：：before本身的大小是一半， 然后改background的大小， 不然转起来会出问题 */
+  background-size: 10rem 18rem;
+  background-repeat: no-repeat;
+  border-top-left-radius: 10rem;
+  border-bottom-left-radius: 10rem;
+}
+
+.main .loading-widget-wrapper:nth-child(3) .loader::after {
+  background: var(--theme-lightblue);
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  box-shadow: 0 0 1rem var(--theme-lightblue), 0 0 2rem var(--theme-lightblue),
+    0 0 3rem var(--theme-lightblue), 0 0 4rem var(--theme-lightblue),
+    0 0 5rem var(--theme-lightblue), 0 0 6rem var(--theme-lightblue),
+    0 0 7rem var(--theme-lightblue), 0 0 8rem var(--theme-lightblue),
+    0 0 9rem var(--theme-lightblue), 0 0 10rem var(--theme-lightblue);
+  z-index: 20;
+}
+
+.main .loading-widget-wrapper:nth-child(3) .loader span {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  bottom: 2rem;
+  left: 2rem;
+  background: #111;
+  border-radius: 50%;
+  box-shadow: -2px -2px 2px rgba(255, 255, 255, 0.3),
+    5px 5px 5px rgba(0, 0, 0, 0.2), 15px 15px 15px rgba(0, 0, 0, 0.2);
+  transition: all 2s;
+}
+
+.main .loading-widget-wrapper:nth-child(3) .loader:hover span {
+  box-shadow: none;
+}
+
+/* =================loader type four========== */
+.main .loading-widget-wrapper:nth-child(4) {
+    width: 25rem;
+    height: 25rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.main .loading-widget-wrapper:nth-child(4) .loader {
+  width: 15rem;
+  height: 15rem;
+  animation: just-hue 10s linear infinite;
+  position: absolute;
+  top: 2.5rem;
+  left: 5rem;
+}
+
+@keyframes just-hue {
+    0% {filter: hue-rotate(0deg);}
+    100%{filter: hue-rotate(360deg);}
+}
+
+.main .loading-widget-wrapper:nth-child(4) .loader span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  transform: rotate(calc(18deg * var(--i)));
+}
+
+.main .loading-widget-wrapper:nth-child(4) .loader span::after {
+  content: "";
+  position: absolute;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--theme-green);
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 1rem var(--theme-green), 0 0 2rem var(--theme-green),
+    0 0 3em var(--theme-green), 0 0 4rem var(--theme-green),
+    0 0 5rem var(--theme-green), 0 0 6rem var(--theme-green),
+    0 0 7rem var(--theme-green), 0 0 8rem var(--theme-green),
+    0 0 9rem var(--theme-green), 0 0 10rem var(--theme-green);
+animation: scale-animation 2s linear infinite;
+animation-delay: calc(.1s * var(--i));
+}
+
+@keyframes scale-animation {
+    0% {
+        transform: scale(1);
+    }
+    80%,100% {
+        transform: scale(0);
+    }
+}
+
+/* ========illustration============= */
+.main .illustration-wrapper {
+    position: absolute;
+    left: 67%;
+    bottom: 20%;
+    /* ???为什么div 是屏幕大小width 而不是根据图片呢？？因为.illustration-wrapper 本身有left：1%， bottom：18%， 要是设置right， 那么就很容易拉长了 */
+    z-index: 20;
+    -webkit-box-reflect: below -7rem var(--reflection-shadow);
+}
+
+.image-dog {
+    width: 32rem;
+}
+
+/* ======================glassmorphism-part================= */
+.glassmorphism-part {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  margin-top: 30rem;
+}
+
+.glassmorphism-part::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(#f00, #f0f);
+  clip-path: circle(30% at 100% 70%);
+}
+
+.glassmorphism-part::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(#2196f3, #e91e63);
+  clip-path: circle(20% at 10% 32%);
+}
+
+.glassmorphism-part span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, var(--theme-yellow) 66%, var(--theme-red));
+  clip-path: circle(15% at 58% 33%);
+}
+
+
+.glassmorphism-section {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.glassmorphism-widget-wrapper:nth-child(2) {
+  -webkit-box-reflect: below 5rem linear-gradient(#0001, #0004);
+} 
+/* the reflection will cause the backdropfilter blur not working */
+
+/* ======================title=============================== */
+
+.glassmorphism-title {
+  font-size: 20rem;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 5rem;
+  color: #fff;
+  text-shadow: -0.5px -0.5px 0.5px rgba(255, 255, 255, 0.3), 1px 1px 1px rgba(255, 255, 255, 0.2), 3px 3px 3px rgba(255, 255, 255, 0.2);
+}
+
+/* ====================glassmorphism card============== */
+
+.glassmorphism-section .card {
+  height: 40rem;
+  width: 32rem;
+  background: rgba(255,255,255,.1);
+  box-shadow: 2rem 2rem 5rem rgba(0, 0, 0, .5);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(.5rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.glassmorphism-section .card .card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  }
+
+.glassmorphism-section .glassmorphism-widget-wrapper:nth-child(2) .card .card-content {
+  transform: translateY(20rem);
+  opacity: 0;
+  transition: all .5s;
+}
+
+/* =========card content hover effect==================== */
+
+.glassmorphism-section .glassmorphism-widget-wrapper:nth-child(2) .card:hover .card-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+/* ============= card content ======================= */
+
+.glassmorphism-section .card .card-content h2 {
+  position: absolute;
+  top: -6rem;
+  right: -6rem;
+  font-size: 16rem;
+  color: rgba(255, 255, 255, .05);
+  pointer-events: none;
+}
+
+.glassmorphism-section .card .card-content h3 {
+  font-size: 3.6rem;
+  text-shadow: -0.5px -0.5px 0.5px rgba(255, 255, 255, 0.3), 1px 1px 1px rgba(0, 0, 0, 0.2), 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.glassmorphism-section .card .card-content p {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin-top: .5rem;
+}
+
+.glassmorphism-section .card .card-content a:link, 
+.glassmorphism-section .card .card-content a:visited{
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: rgba(255,255,255,.1);
+  color: #fff;
+  margin-top: 4.5rem;
+  border-radius: 2rem;
+  font-size: 1.6rem;
+  letter-spacing: .2rem;
+  font-weight: 500;
+  box-shadow: -0.5px -0.5px 0.5px rgba(255, 255, 255, 0.3), 1px 1px 1px rgba(0, 0, 0, 0.2), 3px 3px 3px rgba(0, 0, 0, 0.2);
+  background-attachment: #fff;
+  transition: all;
+}
+
+.glassmorphism-section .card .card-content a:hover {
+  transform: translateY(-.2rem);
+}
+
+
+.glassmorphism-section .card .card-content a:active {
+  transform: translateY(0);
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.2);
+}
+
+/* ================card-type-two-selection-indicator=========== */
+
+.glassmorphism-section .glassmorphism-widget-wrapper:nth-child(2) .card {
+  flex-direction: column;
+}
+
+.glassmorphism-section .glassmorphism-widget-wrapper:nth-child(2) .card .selection-indicator {
+  position: absolute;
+  top: 20rem;
+  left: 11rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 3s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  0% {transform: translate(-20rem, 25rem);
+  opacity: 0;}
+  50%,75% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+}
+
+.glassmorphism-section .glassmorphism-widget-wrapper:nth-child(2) .card .selection-indicator span {
+  top: unset;
+  left: unset;
+  right: unset;
+  bottom: unset;
+  background: none;
+  clip-path: none;
+  display: inline-block;
+  border-radius: 50%;
+  border: .2rem solid rgba(255, 255, 255, .25);
+  width: 4rem;
+  height: 4rem;
+  top: -2rem;
+  left: 3rem;
+  animation: appear 3s linear infinite;
+}
+
+@keyframes appear {
+  0%,50% {opacity: 0;}
+  75% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+.glassmorphism-section .glassmorphism-widget-wrapper:nth-child(2) .card .selection-indicator span:nth-child(2) {
+  width: 6rem;
+  height: 6rem;
+  top: -3rem;
+  left: 2rem;
+  animation-delay: .2s;
+}
+
+.glassmorphism-section .glassmorphism-widget-wrapper:nth-child(2) .card .selection-indicator span:nth-child(3) {
+  width: 8rem;
+  height: 8rem;
+  top: -4rem;
+  left: 1rem;
+  animation-delay: .5s;
+}
+
+.glassmorphism-section .glassmorphism-widget-wrapper:nth-child(2) .card:hover .selection-indicator span {
+   border: 1px transparent solid;
+   /* opacity 不起作用 估计是因为 hover的时候 span的动画继续 opacity 根据动画里面 改变 */
+}
+
+.glassmorphism-section .glassmorphism-widget-wrapper:nth-child(2) .card img {
+  width: 35%;
+  position: relative;
+  z-index: 1;
+}
+
+.glassmorphism-section .glassmorphism-widget-wrapper:nth-child(2) .card:hover img {
+  opacity: 0;
+}
+
+/* =================glassmorphism-card-type-three============= */
+.glassmorphism-section .product-card {
+  width: 40rem;
+  height: 40rem;
+  position: relative;
+}
+
+.glassmorphism-section .product-card .thumb{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10rem;
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 1;
+}
+
+.glassmorphism-section .product-card .thumb li {
+  list-style: none;
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255,255,255,.2);
+  box-shadow: 0 1.5rem 2.5rem rgba(0, 0, 0, .05);
+  border-radius: 2rem;
+  backdrop-filter: blur(.4rem);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glassmorphism-section .product-card .thumb li img {
+   width: 80%;
+   transition: all .5s;
+}
+
+.glassmorphism-section .product-card .thumb li:hover img {
+  transform: rotate(-35deg);
+}
+
+.glassmorphism-section .product-card .hero-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35rem;
+  height: 40rem;
+  background: rgba(255,255,255,.1);
+  box-shadow: 2rem 2rem 5rem rgba(0, 0, 0, .5);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(.5rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem 2rem;
+  letter-spacing: .2rem;
+  padding-left: 5rem;
+}
+
+.glassmorphism-section .product-card .hero-container h2 {
+  font-size: 3rem;
+}
+
+.glassmorphism-section .product-card .hero-container span {
+  background: none;
+  clip-path: none;
+  position: absolute;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.25);
+  bottom: unset;
+  top: unset;
+  left: unset;
+  right: unset;
+  right: -.4rem;
+  top: -7rem;
+  font-size: 32rem;
+  z-index: -1;
+}
+
+.glassmorphism-section .product-card .hero-container img {
+  width: 80%;
+  transition: all .25s;
+}
+
+.glassmorphism-section .product-card .hero-container img:hover {
+  transform: rotate(-15deg) scale(1.5) translateX(5rem);
+}
+
+.glassmorphism-section .product-card .hero-container .size {
+  display: flex;
+  align-items: center;
+}
+
+.glassmorphism-section .product-card .hero-container .size span{
+  background: none;
+  clip-path: none;
+  position: relative;
+  top: unset;
+  right: unset;
+  left: unset;
+  bottom: unset;
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.glassmorphism-section .product-card .hero-container .size li{
+  list-style: none;
+  background: rgba(255,255,255,.05);
+  width: 3.5rem;
+  height: 3.5rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  margin: .5rem;
+  border-radius: .5rem;
+  border: .5px solid rgba(255, 255, 255, .05);
+  border-top: .5px solid rgba(255, 255, 255, .25);
+  border-left: .5px solid rgba(255, 255, 255, .25);
+  box-shadow: -0.5px -0.5px 0.5px rgba(255, 255, 255, 0.3), 1px 1px 1px rgba(0, 0, 0, 0.2), 3px 3px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all .5s;
+}
+
+.glassmorphism-section .product-card .hero-container .size li:hover {
+  transform: translateY(-1rem);
+}
+
+.glassmorphism-section .product-card .hero-container .card-btn:link, 
+.glassmorphism-section .product-card .hero-container .card-btn:visited {
+  position: absolute;
+  bottom: -3rem;
+  display: inline-block;
+  color: #fff;
+  font-size: 1.4rem;
+  padding: 1.5rem 3.5rem;
+  background: rgba(255,255,255,.2);
+  box-shadow: 2rem 2rem 5rem rgba(0, 0, 0, .5);
+  border-radius: 2.5rem;
+  backdrop-filter: blur(.5rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  transition: all .25s;
+}
+
+
+.glassmorphism-section .product-card .hero-container .card-btn:hover {
+  letter-spacing: .6rem;
+}
+
+/* =========================card-type-four===================== */
+
+/* .glassmorphism-part .glassmorphism-widget-wrapper:nth-child(4) .product-card {
+
+} */
+
+.glassmorphism-part .glassmorphism-widget-wrapper:nth-child(4) .product-card .thumb {
+  background: rgba(255,255,255,.25);
+  box-shadow: 2rem 2rem 5rem rgba(0, 0, 0, .5);
+  border-top-left-radius: 5rem;
+  border-bottom-left-radius: 1.5rem;
+  backdrop-filter: blur(.6rem);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.7);
+  border-left: 1.5px solid rgba(255, 255, 255, 0.7);
+}
+
+.glassmorphism-part .glassmorphism-widget-wrapper:nth-child(4) .product-card .thumb li {
+  background: none;
+  border: none;
+  width: unset;
+  height: unset;
+  box-shadow: unset;
+  backdrop-filter: none;
+  border-radius: unset;
+  border-bottom: 2px rgba(255, 255, 255, .25) solid;
+}
+
+.glassmorphism-part .glassmorphism-widget-wrapper:nth-child(4) .product-card .thumb li:hover img {
+   transform: rotate(-35deg) translateY(-1.5rem);
+}
+
+
+/* =========================Product-card-secion========== */
+
+.product-card-wrapper {
+  width: 100%;
+  height: 95vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  /* z-index: -1; */
+  /* this can affect the hover effect of other things */
+}
+
+.product-card-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(red, yellow);
+  clip-path: circle(20% at 50% 70%);
+  z-index: -5;
+}
+
+/* .product-card-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(315deg, red 10%, yellow);
+  clip-path: circle(15% at 80% 55%);
+  z-index: -5;
+} */
+
+.product-card-wrapper > span {
+  position: absolute;
+  display: inline-block;
+  top: 70%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  height: 50rem;
+  width: 50rem;
+  background: linear-gradient(rgb(255, 136, 0), yellow);
+  box-shadow: .5rem .5rem 5rem rgba(0, 0, 0, 1);
+  z-index: -1;
+  animation: just-rotate 5s linear infinite;
+}
+
+@keyframes just-rotate {
+  0% {transform: translate(-50%, -50%) rotate(0);}
+  100% {transform: translate(-50%, -50%) rotate(360deg);}
+}
+
+.product-card-wrapper > span:nth-child(6) {
+  height: 120rem;
+  width: 120rem;
+  z-index: -1000;
+  /* filter: blur(2rem); */
+  box-shadow: 0 0 10rem rgb(255, 136, 0);
+}
+
+.product-card-wrapper h1 {
+  font-size: 20rem;
+  /* text-transform: uppercase; */
+}
+
+.cards-display-section {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20rem;
+}
+
+/* ===============wave-effect-background============== */
+
+.product-card-wrapper .wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 12rem;
+  background: url(images/wave.png);
+  background-size: 100rem 12rem;
+  /* background-repeat: no-repeat;  the background is repeating to make a infinite wave effect*/
+}
+
+/* .wave.wave1  not .wave .wave1*/
+.product-card-wrapper .wave1 {
+  animation: waving 30s linear infinite;
+  z-index: 1000;
+  opacity: 1;
+  animation-delay: 0s;
+  bottom: 0;
+}
+
+@keyframes waving {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 100rem;
+  }
+}
+
+.product-card-wrapper .wave2 {
+  animation: waving 15s linear infinite;
+  animation-direction: reverse;
+  z-index: 999;
+  opacity: .5;
+  animation-delay: -5s;
+  bottom: .1rem;
+}
+
+.product-card-wrapper .wave3 {
+  animation: waving 30s linear infinite;
+  z-index: 998;
+  opacity: .2;
+  animation-delay: -5s;
+  bottom: .1rem;
+}
+
+.product-card-wrapper .wave4 {
+  animation: waving 10s linear infinite;
+  animation-direction: reverse;
+  z-index: 997;
+  opacity: .7;
+  bottom: .2rem;
+}
+
+/* ================ Card-one=============================== */
+
+.cards-display-section .product-card {
+  height: 40rem;
+  width: 40rem;
+  position: relative;
+}
+
+.cards-display-section .product-card .thumb {
+  height: 100%;
+  width: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.cards-display-section .product-card .thumb li {
+  list-style: none;
+  height: 10rem;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 2rem 2rem 5rem rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(0.4rem);
+  border: .1rem solid rgba(255, 255, 255, 0.25);
+  border-top: .1rem solid rgba(255, 255, 255, 0.5);
+  border-left: .1rem solid rgba(255, 255, 255, 0.5);
+  border-radius: 1.5rem;
+}
+
+.cards-display-section .product-card .thumb li img {
+  width: 90%;
+  transition: 0.5s;
+}
+
+.cards-display-section .product-card .thumb li:hover img {
+  transform: rotate(-35deg);
+}
+
+.cards-display-section .product-card .hero-container {
+  position: absolute;
+  height: 100%;
+  width: 35rem;
+  top: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 2rem 2rem 5rem rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(0.5rem);
+  border-top: .1rem solid rgba(255, 255, 255, 0.5);
+  border-left: .1rem solid rgba(255, 255, 255, 0.5);
+  border-radius: 1.5rem;
+}
+
+.cards-display-section .product-card .hero-container .container-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  padding-left: 4rem;
+  padding-top: 4rem;
+}
+
+/* This is using ::before to be against CSS
+the hero-container can not be overflow hidden coz of the animation 
+but make ::before 100% width of the container and set the hidden in itself can do the trick */
+.cards-display-section .product-card .hero-container::before {
+  content: "Nike";
+  position: absolute;
+  font-size: 20rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.04);
+  font-weight: 600;
+  font-style: italic;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.cards-display-section .product-card .hero-container .container-content h2 {
+  font-size: 2.4rem;
+}
+
+.cards-display-section .product-card .hero-container .container-content img {
+  width: 85%;
+  transition: 0.25s;
+}
+
+.cards-display-section
+  .product-card
+  .hero-container
+  .container-content
+  img:hover {
+  transform: scale(1.1) rotate(-35deg) translateX(5rem);
+}
+
+.cards-display-section
+  .product-card
+  .hero-container
+  .container-content
+  .size-bar
+  span {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  color: rgba(255, 255, 255, 0.01);
+  text-shadow: -0.05rem -0.05rem 0.05rem rgba(255, 255, 255, 0.3),
+    .1rem .1rem .1rem rgba(0, 0, 0, 0.2), .3rem .3rem .3rem rgba(0, 0, 0, 0.2);
+}
+
+.cards-display-section
+  .product-card
+  .hero-container
+  .container-content
+  .size-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.cards-display-section
+  .product-card
+  .hero-container
+  .container-content
+  .size-bar
+  li {
+  list-style: none;
+  height: 4rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 2rem 2rem 5rem rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(0.4rem);
+  border: .1rem solid rgba(255, 255, 255, 0.25);
+  border-top: .1rem solid rgba(255, 255, 255, 0.5);
+  border-left: .1rem solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.cards-display-section
+  .product-card
+  .hero-container
+  .container-content
+  .size-bar
+  li:hover {
+  transform: translateY(-0.8rem);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.cards-display-section
+  .product-card
+  .hero-container
+  .container-content
+  .btn:link,
+.cards-display-section
+  .product-card
+  .hero-container
+  .container-content
+  .btn:visited {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(50%);
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.6rem;
+  padding: 1.5rem 3.5rem;
+  letter-spacing: 0.2rem;
+  white-space: nowrap;
+  font-weight: 600;
+  border-radius: 10rem;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0.2) 30%
+  );
+  box-shadow: 2rem 2rem 5rem rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(0.4rem);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  transition: 0.5s;
+}
+
+.cards-display-section
+  .product-card
+  .hero-container
+  .container-content
+  .btn:hover {
+  letter-spacing: 0.4rem;
+}
+
+/* ==========================card-two======================= */
+
+.product-card-two {
+  height: 46rem;
+  width: 32rem;
+  background: #232323;
+  border-radius: 2rem;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  /* -webkit-box-reflect: below 2rem linear-gradient(#0001, #0004); */
+}
+
+.product-card-two > span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: var(--theme-light-yellow);
+  clip-path: circle(15rem at 80% 20%);
+  border-radius: 1.5rem;
+  transition: 0.5s;
+}
+
+.product-card-two::before {
+  content: "Nike";
+  text-transform: uppercase;
+  position: absolute;
+  top: 20%;
+  left: -20%;
+  font-size: 20rem;
+  letter-spacing: 1rem;
+  font-weight: bold;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.04);
+  transition: 2s ease-out;
+}
+
+.product-card-two:hover::before {
+    transform: translateX(-18rem);
+  }
+
+.product-card-two:hover > span {
+  clip-path: circle(30rem at 80% -20%);
+}
+
+.product-card-two .img-container {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.5s;
+  height: 22.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.product-card-two:hover .img-container {
+  top: 0;
+  transform: translateY(0);
+}
+
+.product-card-two .img-container img {
+  width: 80%;
+  transform: rotate(-35deg);
+}
+
+.product-card-two .content-container {
+  position: absolute;
+  z-index: 15;
+  bottom: 0;
+  transform: translateY(60%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* height: 20rem; */
+  height: 50%;
+  justify-content: space-around;
+  transition: 1s;
+  /* width: 100%; */
+}
+
+.product-card-two:hover .content-container {
+  transform: translateY(-5%);
+}
+
+.product-card-two .content-container h2 {
+  font-size: 2rem;
+  /* margin-bottom: 1rem; */
+}
+
+.product-card-two .content-container .size-bar,
+.product-card-two .content-container .color-bar {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+
+.product-card-two:hover .content-container .size-bar {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.5s;
+  /* this delay must be larger than the translate transiation(.5) so that the traslateY will happen 1st and make enough space for the element to show (visibility: visible) */
+}
+
+.product-card-two:hover .content-container .color-bar {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.6s;
+}
+
+.product-card-two .content-container .size-bar span,
+.product-card-two .content-container .color-bar span {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: #fff;
+  margin-right: 0.5rem;
+}
+
+.product-card-two .content-container .size-bar li {
+  list-style: none;
+  height: 4rem;
+  width: 4rem;
+  margin: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 2rem 2rem 5rem rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(0.4rem);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 1.5rem;
+  cursor: pointer;
+  transition: 0.5s;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.product-card-two .content-container .size-bar li:hover {
+  background: var(--theme-light-yellow);
+  transform: translateY(-0.5rem);
+}
+
+.product-card-two .content-container .color-bar li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.product-card-two .content-container .color-bar li span {
+  background: var(--theme-light-yellow);
+  border-radius: 50%;
+  display: inline-block;
+  height: 2.5rem;
+  width: 2.5rem;
+  margin: 0.5rem;
+  filter: blur(0.05rem);
+  position: relative;
+}
+
+.product-card-two .content-container .color-bar li span::before {
+  content: "";
+  position: absolute;
+  top: 0.4rem;
+  left: 0.4rem;
+  right: 0.4rem;
+  bottom: 0.4rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.product-card-two .content-container .color-bar li:nth-child(3) span {
+  background: var(--theme-neon-green);
+}
+
+.product-card-two .content-container .color-bar li:nth-child(4) span {
+  background: var(--theme-light-red);
+}
+
+.product-card-two .content-container .btn:link,
+.product-card-two .content-container .btn:visited {
+  text-decoration: none;
+  /* position: relative; */
+  font-size: 1.5rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 2rem 2rem 5rem rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(0.4rem);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 1.5rem 3rem;
+  border-radius: 0.4rem;
+  font-weight: 600;
+  letter-spacing: .2rem;
+  /* margin-top: 2rem; */
+  transition: 0.5s;
+  transform: translateY(5rem);
+  opacity: 0;
+  z-index: 50;
+  /* display: inline-block; */
+  backface-visibility: hidden;
+}
+
+.product-card-two:hover .content-container .btn:link,
+.product-card-two:hover .content-container .btn:visited {
+  transform: translateY(0);
+  opacity: 1;
+  transition-delay: 0.75s;
+}
+
+
+
