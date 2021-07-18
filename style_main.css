@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins&display=swap');
 /*=============== variables setup ===========*/
 
 :root {
@@ -670,7 +671,7 @@ animation-delay: calc(.1s * var(--i));
   clip-path: circle(20% at 10% 32%);
 }
 
-.glassmorphism-part span {
+.glassmorphism-part > span {
   position: absolute;
   top: 0;
   right: 0;
@@ -1066,8 +1067,358 @@ animation-delay: calc(.1s * var(--i));
    transform: rotate(-35deg) translateY(-1.5rem);
 }
 
+/* ==========================bank-card============================= */
 
-/* =========================Product-card-secion========== */
+.bank-card {
+  width: 50.8rem;
+  height: 31.4rem;
+  transform-style: preserve-3d;
+  /* The transform-style CSS property sets whether children of an element are positioned in the 3D space or are flattened in the plane of the element. */
+  /* this is the reason, the card can be flipped from one side to another, why??? */
+  perspective: 50rem;
+  /* what is this for???? if it is 5rem, then when flipping, the card will be distorted */
+  position: relative;
+  font-family: 'Poppins',sans-serif;
+}
+
+.bank-card .card-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.5);
+  border-radius: 1.5rem;
+  background: rgba(255, 255,255, .05);
+  backdrop-filter: blur(1rem);
+  transform-style: preserve-3d;
+  /* transform: rotateY(-5deg); */
+  transition: 1s; 
+  backface-visibility: hidden;
+  /* the flip animation transition */
+}
+
+/* =============card-font-side========================== */
+/*  .card .face-front {
+
+} */
+
+.bank-card .face-front::before {
+  content: '';
+  position: absolute;
+  bottom: 4rem;
+  right: 4rem;
+  background: white;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  opacity: .5;
+}
+
+.bank-card .face-front::after {
+  content: '';
+  position: absolute;
+  bottom: 4rem;
+  right: 8rem;
+  background: white;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  opacity: .7;
+}
+
+.bank-card .face-front .card-name {
+  position: absolute;
+  top: 3rem;
+  left: 4rem;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
+.bank-card .face-front .bank-name {
+  position: absolute;
+  top: 2.5rem;
+  right: 4rem;
+  font-size: 2.4rem;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.bank-card .face-front .chip-image {
+  position: absolute;
+  top: 8rem;
+  left: 5rem;
+  max-width: 6.4rem;
+}
+
+.bank-card .face-front .card-number {
+ position: absolute;
+ bottom: 13rem;
+ left: 4rem;
+ font-size: 1.8rem;
+ font-weight: 500;
+ letter-spacing: .6rem;
+ text-shadow: 0 .2rem .1rem #0005;
+ font-family: 'Orbitron', sans-serif;
+}
+
+.bank-card .face-front .valid-info {
+  position: absolute;
+  bottom: 7rem;
+  left: 3rem;
+  display: flex;
+  align-items: center;
+  line-height: 1.2rem;
+  /* to make the two lines tight */
+}
+
+.bank-card .face-front .valid-info span {
+  text-transform: uppercase;
+}
+
+.bank-card .face-front .valid-info .valid-info-text span:nth-child(1) {
+  display: block;
+}
+
+.bank-card .face-front .valid-info > span {
+ margin-left: 1.5rem;
+ font-size: 1.6rem;
+ font-weight: 500;
+ letter-spacing: .2rem;
+ font-family: 'Orbitron', sans-serif;
+}
+
+.bank-card .face-front .expire-info {
+  position: absolute;
+  bottom: 7rem;
+  left: 18rem;
+  display: flex;
+  line-height: 1.2rem;
+  text-transform: uppercase;
+  align-items: center;
+}
+
+/*  .card .face-front .expire-info .expire-info-text {
+  text-align: right;
+} */
+
+.bank-card .face-front .expire-info .expire-info-text span:nth-child(1) {
+ display: block;
+}
+
+.bank-card .face-front .expire-info > span {
+  margin-left: 1.5rem;
+  font-size: 1.6rem;
+  font-family: 'Orbitron',sans-serif;
+  font-weight: 500;
+  letter-spacing: .2rem;
+}
+
+.bank-card .face-front .cardholder-name {
+  position: absolute;
+  bottom: 4rem;
+  left: 6rem;
+  font-weight: 300;
+  font-size: 1.6rem;
+  letter-spacing: .3rem;
+  text-transform: uppercase;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* ===================card-back-side================ */
+
+.bank-card .face-back .blackBar {
+  position: absolute;
+  height: 6rem;
+  width: 100%;
+  background: #000;
+  top: 4rem;
+}
+
+.bank-card .face-back .bank-contact-info {
+  position: absolute;
+  display: flex;
+  top: 1rem;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  font-size: .8rem;
+  font-weight: 100;
+}
+
+.bank-card .face-back .ccv-bar {
+  position: absolute;
+  top:11rem;
+  left: 2rem;
+  font-weight: 100;
+}
+
+.bank-card .face-back .ccv-bar > h3 {
+  text-transform:  uppercase;
+  letter-spacing: .12rem;
+}
+
+.bank-card .face-back .ccv-bar .white-bar {
+  width: 30rem;
+  height: 4rem;
+  background: #fff;
+  margin-top: 1rem;
+}
+
+.bank-card .face-back .ccv-bar .access-info {
+  position: absolute;
+  top: 2rem;
+  right: -17rem;
+  font-size: .3rem;
+  text-align: right;
+  letter-spacing: .1rem;
+  transform: scale(.9);
+  line-height: 1.3rem;
+}
+
+.bank-card .face-back .ccv-bar .access-info h5 {
+  font-weight: 100;
+}
+
+.bank-card .face-back .ccv-bar .access-info h5:last-child {
+  transform: scale(.8);
+  /* remove the padding caused by scale, as the transform origin was in the center */
+  -webkit-transform-origin-x: 100%;
+}
+
+.bank-card .face-back .ccv-bar > span {
+  position: absolute;
+  top: 2.7rem;
+  left: 26.2rem;
+  color: #000;
+  font-size: 1.6rem;
+  transform: skew(10deg);
+}
+
+.bank-card .face-back .ccv-bar > h5 {
+  transform: scale(.7);
+  -webkit-transform-origin-x: 0;
+  letter-spacing: .1rem;
+  font-weight: 100;
+}
+
+.bank-card .face-back .disclosure-bar {
+  position: absolute;
+  bottom: 6rem;
+  display: flex;
+  padding: 0 2rem;
+  align-items: center;
+}
+
+.bank-card .face-back .disclosure-bar .silver-box {
+  width: 7rem;
+  height: 5rem;
+  background: silver;
+  border-radius: 1rem;
+}
+
+.bank-card .face-back .disclosure-bar > h3 {
+  transform:scale(.8);
+  font-weight: 100;
+  -webkit-transform-origin-x: 0;
+  margin-left: 1.5rem;
+}
+
+.bank-card .face-back .disclosure-bar  span {
+  display: block;
+  
+}
+
+.bank-card .face-back > h3 {
+  font-weight: 100;
+  font-style: italic;
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  font-size: 1.6rem;
+  letter-spacing: .2rem;
+}
+
+.bank-card .face-back .eftpos-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 6rem;
+  width: 13rem;
+  display: flex;
+  align-items: center;
+}
+
+.bank-card .face-back .eftpos-container > h3 {
+  /* position: absolute;
+  bottom: 0;
+  right: 0; */
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 2rem;
+}
+
+.bank-card .face-back .eftpos-container .clip-container {
+  position: absolute;
+  left: 4.88rem;
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  clip-path: polygon(0 50%, 100% 0, 100% 100%);
+  /* this is not ideal, there is a small dot left */
+  /* transform:scale(.8); */
+  z-index: -1;
+}
+
+.bank-card .face-back .eftpos-container span {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  border: .3rem silver solid;
+  border-radius: 50%;
+}
+
+.bank-card .face-back .eftpos-container span:nth-child(2) {
+  position: absolute;
+  width: 3.8rem;
+  height: 3.8rem;
+  border: .3rem silver solid;
+  border-radius: 50%;
+}
+
+.bank-card .face-back .eftpos-container span:nth-child(3) {
+  position: absolute;
+  width: 4.6rem;
+  height: 4.6rem;
+  border: .3rem silver solid;
+  border-radius: 50%;
+}
+
+.bank-card .face-back .eftpos-container span:nth-child(4) {
+  position: absolute;
+  width: 5.4rem;
+  height: 5.4rem;
+  border: .3rem silver solid;
+  border-radius: 50%;
+}
+
+/* ==================== card-flip-animation============ */
+.bank-card .face-back {
+  transform: rotateY(180deg);
+}
+/* 1st step: make the face-back to face-front. because the face-back in the html tree is under face front, so it appears on the the top of face-front. However, we want the face-front to be presented to users by default */
+
+.bank-card:hover .face-front {
+  transform: rotateY(180deg);
+} 
+
+.bank-card:hover .face-back {
+  transform: rotateY(360deg);
+}
+
+
+/* =========================Product-card-section========== */
 
 .product-card-wrapper {
   width: 100%;
