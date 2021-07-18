@@ -824,7 +824,8 @@ animation-delay: calc(.1s * var(--i));
   }
 }
 
-.glassmorphism-section .glassmorphism-widget-wrapper:nth-child(2) .card .selection-indicator span {
+.glassmorphism-section .glassmorphism-widget-wrapper:nth-child(2) .card .selection-indicator > span {
+  position: absolute;
   top: unset;
   left: unset;
   right: unset;
