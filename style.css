@@ -64,10 +64,11 @@ body {
 /* =====1.1.1 navigation menu - navBar widget======= */
 .nav-items .nav-item {
   display: inline-block;
+  position: relative;
 }
 
-.nav-item a:link,
-.nav-item a:visited {
+.nav-item > a:link,
+.nav-item > a:visited {
   /* Links are display:inline by default and so are not affected by transform. */
   display: inline-block;
   color: white;
@@ -77,14 +78,14 @@ body {
   transition: all;
 }
 
-.nav-items .nav-item a:hover {
+.nav-items .nav-item > a:hover {
   transform: translateY(-0.2rem);
   background: var(--theme-lightblue);
   box-shadow: 0 0 1rem var(--theme-lightblue), 0 0 2rem var(--theme-lightblue),
     0 0 3rem var(--theme-lightblue), 0 0 4rem var(--theme-lightblue);
 }
 
-.nav-items .nav-item a:active {
+.nav-items .nav-item > a:active {
   transform: translateY(0);
   box-shadow: 0 0 0.5rem var(--theme-lightblue), 0 0 1rem var(--theme-lightblue),
     0 0 2rem var(--theme-lightblue);
@@ -128,6 +129,70 @@ body {
   box-shadow: 0 0 0.5rem var(--theme-purple), 0 0 1rem var(--theme-purple),
     0 0 2rem var(--theme-purple);
 }
+/* ================nav-item work work-list============== */
+  .nav-items .nav-item .work-list {
+    background: #fff;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    /* padding: 0  1rem 1rem 1rem; */
+    /* height: 15rem; */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.6rem;
+    white-space: nowrap;
+    justify-content: space-around;
+    text-align: center;
+    border-radius: 0 0 .5rem .5rem;
+    margin-top: 0rem;
+    visibility: hidden;
+    /* font-family: sans-serif; */
+    letter-spacing: .1rem;
+    box-shadow: 0 0 0.5rem var(--theme-lightblue), 0 0 1rem var(--theme-lightblue),
+    0 0 2rem var(--theme-lightblue);
+  }
+
+  .nav-items .nav-item .work-list li {
+    list-style: none;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: var(--theme-lightblue);
+    padding: 1.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-items .nav-item .work-list li:nth-child(4) {
+    border-radius: 0 0 .5rem .5rem;
+  }
+
+  .nav-items .nav-item .work-list li a:link,   .nav-items .nav-item .work-list li a:visited {
+    text-decoration: none;
+    color: #fff;
+    padding: .5rem 1rem;
+    transition: .5s;
+    border: .2rem transparent solid;
+    border-radius: .5rem;
+  }
+
+  .nav-items .nav-item .work-list li .unknown-issue:link,   .nav-items .nav-item .work-list li .unknown-issue:visited {
+    padding: 0;
+  }
+
+  .nav-items .nav-item .work-list li a:hover {
+    border: .2rem #fff solid;
+    
+  }
+
+  .nav-items .nav-item:nth-child(1) a:hover ~ .work-list {
+    visibility: visible;
+  }
+
+  .nav-items .nav-item:nth-child(1) .work-list:hover {
+    visibility: visible;
+  }
 
 /* =====1.1.2 logo - navBar widget====== */
 
